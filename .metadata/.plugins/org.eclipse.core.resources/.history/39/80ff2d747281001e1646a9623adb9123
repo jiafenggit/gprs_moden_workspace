@@ -1,0 +1,43 @@
+'''
+Created on 2009-6-15
+
+@author: liangwei
+'''
+
+import pyinsim
+import sys
+import serial
+import time
+from struct import *;
+
+
+    
+# Function called when OutGauge times out.
+def timeout(outgauge, timeout):
+    print 'OutGauge timed out in %d seconds' % timeout
+    
+# Create an OutGauge object. The timeout specifies how many seconds to wait for
+# a response before timing out.
+outgauge = pyinsim.OutGauge(timeout=20)
+
+# Bind the OutGauge packet event-handler.
+outgauge.bind(outgaugePacket)
+outgauge.bindTimeout(timeout)
+
+
+ser = serial.Serial("COM2",timeout=5)  #open first serial port
+print ser.portstr       #check which port was really used
+
+buf=''
+buf+=pack('c', 'R')
+buf+=pack('I', rpm)
+ser.write(buf)
+
+n=ser.inWaiting()
+if n>0:
+    r_buf=ser.read(n)
+    print "read:"+r_buf
+
+
+
+ser.close()

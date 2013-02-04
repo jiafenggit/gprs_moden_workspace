@@ -1,0 +1,9 @@
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\ResolveAssemblyReference.cache
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\moden_sms_reciver.Form1.resources
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\moden_sms_reciver.Properties.Resources.resources
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\moden_sms_reciver.csproj.GenerateResource.Cache
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\bin\Release\moden_sms_reciver.exe
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\bin\Release\moden_sms_reciver.pdb
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\moden_sms_reciver.exe
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\obj\Release\moden_sms_reciver.pdb
+D:\workspace\gprs_moden_workspace\moden_sms_reciver\moden_sms_reciver\bin\Release\MySQLDriverCS.dll

@@ -1,0 +1,32 @@
+'''
+Created on 2009-6-15
+
+@author: liangwei
+'''
+
+import sys
+import serial
+import time
+from struct import *;
+
+
+ser = serial.Serial("COM1",timeout=5,baudrate=115200)  #open first serial port
+print ser.portstr       #check which port was really used
+
+
+buf=''
+buf+=pack('s', "ATD13810645430;")
+ser.write("ATD13810645430;")
+    
+
+while 1:
+    
+    
+    n=ser.inWaiting()
+    if n>0:
+        r_buf=ser.read(n)
+        print "read:"+r_buf
+        
+    time.sleep(1);
+
+ser.close()

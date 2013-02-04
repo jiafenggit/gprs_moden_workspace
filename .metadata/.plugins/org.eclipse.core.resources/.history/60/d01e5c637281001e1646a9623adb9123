@@ -1,0 +1,78 @@
+'''
+Created on 2009-6-15
+
+@author: liangwei
+'''
+
+import pyinsim
+import sys
+import serial
+import time
+from struct import *;
+
+
+def sendRPM(rpm):
+    buf=''
+    buf+=pack('c', 'R')
+    buf+=pack('I', rpm)
+    ser.write(buf)
+    ser.read()
+
+def sendSpeed(speed):
+    buf=''
+    buf+=pack('c', 'S')
+    buf+=pack('I', speed)
+    ser.flushOutput()
+    ser.write(buf)
+    ser.read()
+
+# OutGauge packet event handler.
+def outgaugePacket(outgauge, packet):
+    speed=int(pyinsim.mpsToKph(packet['Speed']))
+    rpm=int(packet['RPM'])
+    
+    print 'speed:%d,rpm:%d' % (speed,rpm)
+    
+    sendSpeed(speed)
+    sendRPM(rpm)
+    
+    
+#    n=ser.inWaiting()
+#    if n>0:
+#        r_buf=ser.read(n)
+#        print "read:"+r_buf
+
+    
+# Function called when OutGauge times out.
+def timeout(outgauge, timeout):
+    print 'OutGauge timed out in %d seconds' % timeout
+    
+# Create an OutGauge object. The timeout specifies how many seconds to wait for
+# a response before timing out.
+outgauge = pyinsim.OutGauge(timeout=20)
+
+# Bind the OutGauge packet event-handler.
+outgauge.bind(outgaugePacket)
+outgauge.bindTimeout(timeout)
+
+
+ser = serial.Serial("COM2",timeout=5)  #open first serial port
+print ser.portstr       #check which port was really used
+
+try:
+    # Connect to LFS.
+    outgauge.connect('localhost', 30000)
+ 
+    # Block the thread to stop the console from exiting.
+    outgauge.run()
+except pyinsim.socket.error, err:
+    # An error or timeout.
+    print 'OutGauge Error:', err
+    
+except err:
+    print 'OutGauge Error:', err
+finally:
+    # Clean up and close the connection, ending any internal threads.
+    print 'finally!'
+    outgauge.close()
+    ser.close()
