@@ -1,0 +1,9 @@
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/obj/Debug/WindowsApplication1.Form1.resources
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/obj/Debug/WindowsApplication1.Properties.Resources.resources
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/bin/Debug/WindowsApplication1.exe.config
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/bin/Debug/WindowsApplication1.exe.mdb
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/bin/Debug/WindowsApplication1.exe
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/obj/Debug/WindowsApplication1.exe
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/obj/Debug/WindowsApplication1.exe.mdb
+/home/liangwei/gprs_moden_workspace/WindowsApplication1_Mysql/WindowsApplication1/bin/Debug/MySQLDriverCS.dll
